@@ -14,7 +14,7 @@ def index (request):
         return redirect("signin")
     
     return render(request, 'index.html', {'user_profile': user_profile,'posts':posts,
-                                          profile_image:'profile_image'})
+                                          })
 @login_required(login_url='signin')
 def upload(request):
    if request.method=="POST":
