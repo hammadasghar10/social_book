@@ -47,7 +47,6 @@ def like_post(request):
 
 @login_required(login_url="signin")
 def profile(request,pk):
-  # userobject= User.objects.get(username=pk)
    user_profile = Profile.objects.get(user__username=pk)
    user_posts=Post.objects.filter(user=pk)
    user_post_length=len(user_posts)
