@@ -127,4 +127,7 @@ def logout(request):
    return redirect('signin')
 @login_required(login_url='sigin')
 def follow(request):
-   pass
+ if request.metho=="POST":
+    pass
+ else:
+    return redirect('/')

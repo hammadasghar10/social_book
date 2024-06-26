@@ -33,7 +33,9 @@
 					<span style="color: white; font-size: 27px;"><b>{{user_post_length}} Post</b></span>
 					<span style="color: white; font-size: 27px;"><b>1.7m followers</b></span>
 					<span style="color: white; font-size: 27px;"><b>3.5k following</b></span>
-					<a href="" title="" data-ripple=""><button style="background-color: #ffc0cb; border: #ffc0cb;">Follow</button></a>
+					<input type="text" value="{{user.username}}"name="followers"/>
+					<input type="text" value="{{user_profile.username}}"name="followers"/>
+					<a href="" title="" data-ripple=""><button type="submit" style="background-color: #ffc0cb; border: #ffc0cb;">Follow</button></a>
 					
 					</div>
 				</form>
@@ -92,7 +94,7 @@
 		</section><!-- top area -->
 		<section>
 			<div class="bio">
-				Bio goes here...
+				{{user_profile.bio}}
 			</div>
 		</section>
 		
@@ -117,33 +119,24 @@
 
 
 
-{% for image in user_posts %}
+
 
 							<div class="col-lg-6">
 								<div class="central-meta">
 									<ul class="photos">
-					
+										{% for image in user_posts %}
 										<li>
-											<a class="strip" href="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" title="" data-strip-group="mygroup" data-strip-group-options="loop: false">
+											<a class="strip" href="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" title="" data-strip-group="mygroup" data-strip-group-options="loop: true">
 												<img src="{{image.image.url}}" style="height: 250px; width: 300px;" alt=""></a>
 										</li>
-
-										{% comment %} <li>
-											<a class="strip" href="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" title="" data-strip-group="mygroup" data-strip-group-options="loop: false">
-												<img src="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" style="height: 250px; width: 300px;" alt=""></a>
-										</li>
-
-										<li>
-											<a class="strip" href="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" title="" data-strip-group="mygroup" data-strip-group-options="loop: false">
-												<img src="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" style="height: 250px; width: 300px;" alt=""></a>
-										</li>
-										 {% endcomment %}
+                                        {% endfor %}
 										
+										 
 									</ul>
 									<!--<div class="lodmore"><button class="btn-view btn-load-more"></button></div>-->
 								</div><!-- photos -->
-							</div><!-- centerl meta -->
-							{% endfor %}
+							
+							
 							<div class="col-lg-3">
 								<aside class="sidebar static">
 									
