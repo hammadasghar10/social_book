@@ -6,3 +6,4 @@ class Profile_list(admin.ModelAdmin):
 admin.site.register(Profile,Profile_list)
 admin.site.register(Post)
 admin.site.register(LikePost)
+admin.site.register(followercount)
