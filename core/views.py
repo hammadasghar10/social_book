@@ -127,7 +127,7 @@ def logout(request):
    return redirect('signin')
 @login_required(login_url='sigin')
 def follow(request):
- if request.metho=="POST":
+ if request.method=="POST":
     follower=request.POST['follower']
     user=request.POST['user']
     if followercount.objects.filter(follower=follower,user=user).first():
