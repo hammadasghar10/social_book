@@ -128,6 +128,14 @@ def logout(request):
 @login_required(login_url='sigin')
 def follow(request):
  if request.metho=="POST":
-    pass
+    follower=request.POST['follower']
+    user=request.POST['user']
+    if followercount.objects.filter(follower=follower,user=user).first():
+       delete_follower=followercount.objects.get(follower=follower,user=user)
+       delete_follower.delete()
+       return redirect('/profile/'+user)
+    else:
+       new_follower=followercount.objects.create(follower=follower,user=user)
+       new_follower.save()
  else:
     return redirect('/')
